@@ -1,6 +1,8 @@
 {{
     config(materialize = "incremental",
     on_schema_change = "fail",
+    unique_id = ['listing_id'],
+    incremental_strategy = 'merge'
     )
 }}
 
