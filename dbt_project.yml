@@ -40,3 +40,15 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+      
+seeds:
+  retail_sales_project:
+    olist_order_items_dataset:
+      file: data/olist_order_items_dataset.csv
+      header: true
+    olist_orders_dataset:
+      file: data/olist_orders_dataset.csv
+      header: true
+    olist_products_dataset:
+      file: data/olist_products_dataset.csv
+      header: true
