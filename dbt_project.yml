@@ -43,3 +43,5 @@ models:
     
     fact:
       +materialized: incremental
+    src :
+      +materialized: ephemeral
