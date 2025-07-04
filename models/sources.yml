@@ -11,3 +11,5 @@ sources:
       
       - name: reviews
         identifier: raw_reviews
+      - name: customer
+        identifier: raw_customer

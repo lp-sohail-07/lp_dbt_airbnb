@@ -1,6 +1,6 @@
 {{
     config(
-        materialized = "view"
+        materialized = "table"
     )
 }}
 
@@ -15,6 +15,7 @@ clean_listings as (
     listing_id,
     listing_name,
     listing_url,
+    host_id,
     room_type,
         CASE
             WHEN minimum_nights = 0 THEN 1
@@ -32,14 +33,14 @@ clean_listings as (
 )
 
 select 
-        listing_id,
+    listing_id,
     listing_name,
     listing_url,
     room_type,
+    host_id,
     minimum_nights,
     price 
-from {{ ref('src_host') }}
-
+from clean_listings
 
 
 
