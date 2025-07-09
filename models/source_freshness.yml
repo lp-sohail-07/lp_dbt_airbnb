@@ -1,0 +1,15 @@
+version: 2
+sources:
+  - name: airbnb
+    schema: raw
+    tables:
+      - name: source_freshness_table
+        freshness: 
+          error_after:
+            count: 10
+            period: minute
+          warn_after:
+            count: 7
+            period: minute
+        loaded_at_field: created_at
+      
