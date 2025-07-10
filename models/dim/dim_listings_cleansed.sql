@@ -28,7 +28,9 @@ clean_listings as (
             '$') :: NUMBER(
             10,
             2
-        ) AS price
+        ) AS price,
+        created_at,
+        updated_at
     FROM all_src_listings
 )
 
@@ -39,7 +41,9 @@ select
     room_type,
     host_id,
     minimum_nights,
-    price 
+    price,
+    created_at,
+    updated_at,
 from clean_listings
 
 
